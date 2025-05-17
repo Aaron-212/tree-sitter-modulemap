@@ -20,12 +20,14 @@ module.exports = grammar({
 
     // module Foo [system] { ... }
     module_declaration: ($) =>
-      seq(
-        $.module_declaration_keyword,
-        $.module_id,
-        repeat($.attribute),
-        $.block,
-        repeat($.extern_module),
+      choice(
+        $.extern_module,
+        seq(
+          $.module_declaration_keyword,
+          $.module_id,
+          repeat($.attribute),
+          $.block,
+        ),
       ),
     module_declaration_keyword: (_) =>
       seq(optional("explicit"), optional("framework"), "module"),

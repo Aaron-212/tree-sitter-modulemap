@@ -5,7 +5,7 @@
 (string_literal) @string
 (integer_literal) @number
 (identifier) @identifier
-(module_declaration (module_id) @primary)
+(module_declaration (module_id) @label)
 
 ;; Keywords
 (module_declaration_keyword) @keyword
