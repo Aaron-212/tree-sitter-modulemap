@@ -1,0 +1,37 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "modulemap",
+      "camelcase": "ModuleMap",
+      "scope": "source.modulemap",
+      "file-types": ["modulemap"],
+      "injection-regex": "^modulemap$",
+      "class-name": "TreeSitterModulemap",
+      "highlights": "queries/highlights.scm"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Modulemap grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "Aaron Ruan",
+        "email": "i@ar212.com"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/Aaron-212/tree-sitter-modulemap"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": true
+  }
+}

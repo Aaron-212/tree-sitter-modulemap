@@ -1,0 +1,63 @@
+{
+  "name": "tree-sitter-modulemap",
+  "version": "0.1.0",
+  "description": "Modulemap grammar for tree-sitter",
+  "repository": "https://github.com/aaron-212/tree-sitter-modulemap",
+  "license": "MIT",
+  "author": {
+    "name": "Aaron Ruan",
+    "email": "i@ar212.com",
+    "url": "https://ar212.com/"
+  },
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "keywords": [
+    "incremental",
+    "parsing",
+    "tree-sitter",
+    "modulemap"
+  ],
+  "files": [
+    "grammar.js",
+    "tree-sitter.json",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**",
+    "*.wasm"
+  ],
+  "dependencies": {
+    "node-addon-api": "^8.2.1",
+    "node-gyp-build": "^4.8.2"
+  },
+  "devDependencies": {
+    "prebuildify": "^6.0.1",
+    "prettier": "3.5.3",
+    "tree-sitter-cli": "^0.25.4"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.21.1"
+  },
+  "peerDependenciesMeta": {
+    "tree-sitter": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "install": "node-gyp-build",
+    "prestart": "tree-sitter build --wasm",
+    "start": "tree-sitter playground",
+    "test": "node --test bindings/node/*_test.js"
+  },
+  "packageManager": "pnpm@10.4.0+sha512.6b849d0787d97f8f4e1f03a9b8ff8f038e79e153d6f11ae539ae7c435ff9e796df6a862c991502695c7f9e8fac8aeafc1ac5a8dab47e36148d183832d886dd52",
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "tree-sitter",
+      "tree-sitter-cli"
+    ],
+    "onlyBuiltDependencies": [
+      "tree-sitter"
+    ]
+  }
+}
